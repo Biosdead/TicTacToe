@@ -7,15 +7,25 @@ package tictactoe;
 
 /**
  *
- * @author Hekatonkiros
- * classe de configuração para os atributos do jogo
+ * @author Lennon S Furtado classe de configuração para os atributos do jogo
  */
 public class Config {
-   String PlayerOneSymbol; 
-   String PlayerTwoSymbol;
-   
-   public Config(){
-   PlayerOneSymbol = "O"; 
-   PlayerTwoSymbol = "X"; 
-   }
+
+    String PlayerOneSymbol;
+    String PlayerTwoSymbol;
+    boolean PlayerTwoHuman = false;
+
+    public Config() {
+        PlayerOneSymbol = "O"; //Simbolo do player 1
+        PlayerTwoSymbol = "X";
+        PlayerTwoHuman = false;
+    }
+
+    public void TurnOnAI(boolean Humano) { // Liga/Desliga a IA do jogo
+        PlayerTwoHuman = !Humano;
+    }
+
+    public boolean GetPlayerTwo() { // retorna se a IA está ativada ou não
+        return PlayerTwoHuman;
+    }
 }

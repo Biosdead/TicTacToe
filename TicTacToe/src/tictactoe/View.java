@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tictactoe;
 
 import javax.swing.AbstractButton;
@@ -10,15 +5,17 @@ import javax.swing.JLabel;
 
 /**
  *
- * @author Hekatonkiros
+ * @author Lennon S Furtado
+ * Classe pertencente ao pacote View do padrão MVC
  */
 public class View extends javax.swing.JFrame {
+
     /**
      * Creates new form View
      */
     public View() {
         initComponents();
-        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -103,99 +100,84 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * @param args the command line arguments
+     * Devido este aplicativo usar o padrão usar o MVC. A view não deve conter a
+     * lógica da aplicação. Por isso, a criação da classe BtnListener para
+     * conter a lógica da aplicação quando clicar nos botões
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-    }
-    
-    public void AddListenrToAllButtons(){
-    jButton1.addActionListener(new BtnListener());
-    jButton2.addActionListener(new BtnListener());
-    jButton3.addActionListener(new BtnListener());
-    jButton4.addActionListener(new BtnListener());
-    jButton5.addActionListener(new BtnListener());
-    jButton6.addActionListener(new BtnListener());
-    jButton7.addActionListener(new BtnListener());
-    jButton8.addActionListener(new BtnListener());
-    jButton9.addActionListener(new BtnListener());
-    }
-    
-    public AbstractButton getButton1(){
-    return jButton1;
-    }
-    
-    public AbstractButton getButton2(){
-    return jButton2;
-    }
-    
-    public AbstractButton getButton3(){
-    return jButton3;
-    }
-    
-    public AbstractButton getButton4(){
-    return jButton4;
-    }
-    
-    public AbstractButton getButton5(){
-    return jButton5;
-    }
-    
-    public AbstractButton getButton6(){
-    return jButton6;
+    public void AddListenrToAllButtons() {
+        jButton1.addActionListener(new BtnListener());
+        jButton2.addActionListener(new BtnListener());
+        jButton3.addActionListener(new BtnListener());
+        jButton4.addActionListener(new BtnListener());
+        jButton5.addActionListener(new BtnListener());
+        jButton6.addActionListener(new BtnListener());
+        jButton7.addActionListener(new BtnListener());
+        jButton8.addActionListener(new BtnListener());
+        jButton9.addActionListener(new BtnListener());
     }
 
-    public AbstractButton getButton7(){
-    return jButton7;
-    }
-    
-    public AbstractButton getButton8(){
-    return jButton8;
+    /**
+     * Funções que retornam os botões e as labels
+     */
+    public AbstractButton getButton1() {
+        return jButton1;
     }
 
-    public AbstractButton getButton9(){
-    return jButton9;
+    public AbstractButton getButton2() {
+        return jButton2;
     }
-    
-    public JLabel getLblPlayer1(){
-    return jLabel4;
+
+    public AbstractButton getButton3() {
+        return jButton3;
     }
-    public JLabel getLblPlayer2(){
-    return jLabel6;
+
+    public AbstractButton getButton4() {
+        return jButton4;
     }
-    public JLabel getLblTies(){
-    return jLabel5;
+
+    public AbstractButton getButton5() {
+        return jButton5;
     }
-    
-    public void SetLblPlayerOneSymbol(){
-    jLabel1.setText(jLabel1.getText() + Main.CG.PlayerOneSymbol + ")");
+
+    public AbstractButton getButton6() {
+        return jButton6;
     }
-    public void SetLblPlayerTwoSymbol(){
-    jLabel3.setText(jLabel3.getText() + Main.CG.PlayerTwoSymbol + ")");
+
+    public AbstractButton getButton7() {
+        return jButton7;
     }
-    
+
+    public AbstractButton getButton8() {
+        return jButton8;
+    }
+
+    public AbstractButton getButton9() {
+        return jButton9;
+    }
+
+    public JLabel getLblPlayer1() {
+        return jLabel4;
+    }
+
+    public JLabel getLblPlayer2() {
+        return jLabel6;
+    }
+
+    public JLabel getLblTies() {
+        return jLabel5;
+    }
+
+    /**
+     * Funções para setar o texto dos simbolos do player 1 e 2 na View
+     */
+    public void SetLblPlayerOneSymbol() {
+        jLabel1.setText(jLabel1.getText() + Main.CG.PlayerOneSymbol + ")");
+    }
+
+    public void SetLblPlayerTwoSymbol() {
+        jLabel3.setText(jLabel3.getText() + Main.CG.PlayerTwoSymbol + ")");
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -213,6 +195,5 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
-    
-    
+
 }

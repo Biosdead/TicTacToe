@@ -1,42 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tictactoe;
 
 import java.awt.Toolkit;
-import javax.swing.JFrame;
 
 /**
  *
- * @author Hekatonkiros
+ * @author Lennon S Furtado Tic tac toe
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static View v;
     public static GameMaster GM;
     public static Config CG;
-    public static int WidthScreen = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth()/2; 
-    public static int HeightScreen =(int) Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2;
-    
+    public static int WidthScreen = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 2; // Pega a largura da tela
+    public static int HeightScreen = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 2;// pega a altura da tela
+
     public static void main(String[] args) {
-        // TODO code application logic here
         v = new View();
         GM = new GameMaster();
         CG = new Config();
-        v.setSize(WidthScreen,HeightScreen); // seta a dimensão da tela
-        v.AddListenrToAllButtons();
-        v.SetLblPlayerOneSymbol();
+        CG.TurnOnAI(true); // true faz com que ligue a IA // false desliga IA e outro player jogue no lugar
+        v.setSize(WidthScreen, HeightScreen); // seta a dimensão da tela para a métade do tamnho da tela
+        v.AddListenrToAllButtons(); // Função necessaria para adicionar o listener nos botões da view
+        v.SetLblPlayerOneSymbol(); // Função para setar o Simbolo do player 1 
         v.SetLblPlayerTwoSymbol();
-        v.setVisible(true);
-        
+        v.setVisible(true); // Deixa visível a view
+
     }
-    
+
 }
-
-
-//E por que ta travando quando acaba o jogo?
