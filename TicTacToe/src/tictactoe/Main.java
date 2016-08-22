@@ -39,4 +39,4 @@ public class Main {
 }
 
 
-//Inteligência artificial 
+//E por que ta travando quando acaba o jogo?

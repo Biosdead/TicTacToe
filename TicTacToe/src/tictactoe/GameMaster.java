@@ -87,8 +87,7 @@ public class GameMaster {
         turn = !turn;
         countTurn++;
         if (turn) {
-            
-            ai.RandomSelect();
+            ai.SelectToWin();
         }
     }
     
